@@ -348,6 +348,42 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       child: Text("Dm")),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          f_bool = false;
+                          a_bool = false;
+                          c_bool = true;
+                          e_bool = true;
+                          g_bool = false;
+                          d_bool = false;
+                          b_bool = false;
+
+                          a_bool = true;
+                          f_bool = false;
+                          d_bool = false;
+                          note = "Am";
+                        });
+                      },
+                      child: Text("Am")),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          f_bool = true;
+                          a_bool = true;
+                          c_bool = true;
+                          e_bool = false;
+                          g_bool = false;
+                          d_bool = false;
+                          b_bool = false;
+
+                          a_bool = true;
+                          f_bool = true;
+                          d_bool = false;
+                          note = "F";
+                        });
+                      },
+                      child: Text("F")),
                 ],
               ),
             ),
