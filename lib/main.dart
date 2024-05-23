@@ -30,6 +30,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<bool> notas = List.filled(13, false); // Assumindo 7 teclas de notas
+
   int _counter = 0;
   bool c_bool = false;
   bool e_bool = false;
@@ -38,6 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
   bool b_bool = false;
   bool f_bool = false;
   bool a_bool = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Clear();
+    super.initState();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -49,6 +58,42 @@ class _MyHomePageState extends State<MyHomePage> {
   static const double largura_brancas = 30;
   static const double largura_pretas = 20;
   static const double altura_pretas = 100;
+
+  void Major(int i) {
+    Clear();
+    setState(() {
+      notas[0 + i] = true;
+      notas[4 + i] = true;
+      notas[7 + i] = true;
+    });
+  }
+
+  void Menor(int i) {
+    Clear();
+    setState(() {
+      notas[0 + i] = true;
+      notas[3 + i] = true;
+      notas[7 + i] = true;
+    });
+  }
+
+  void Aug(int i) {
+    Clear();
+    setState(() {
+      notas[0 + i] = true;
+      notas[4 + i] = true;
+      notas[8 + i] = true;
+    });
+  }
+
+  void Clear() {
+    setState(() {
+      for (int i = 0; i <= 12; i++) {
+        notas[i] = false;
+      }
+    });
+  }
+
   String note = "";
 
   @override
@@ -62,6 +107,226 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         child: Column(
           children: [
+            SizedBox(
+              height: altura_brancas,
+              width: 240,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("C");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[0] ? Colors.green : null,
+                            borderRadius: BorderRadius.horizontal(
+                                left: Radius.circular(8)),
+                            border: Border.all(
+                              color: Colors.black,
+                            )),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 30,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("D");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[2] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 60,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("E");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[4] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 50,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("D#");
+                      },
+                      child: Container(
+                        width: largura_pretas,
+                        height: altura_pretas,
+                        decoration: BoxDecoration(
+                            color: notas[3] ? Colors.green : Colors.black,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 90,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("F");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[5] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 120,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("G");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[7] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 150,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("A");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[9] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 180,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("B");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[11] ? Colors.green : null,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 210,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("C - oitavado");
+                      },
+                      child: Container(
+                        width: largura_brancas,
+                        height: altura_brancas,
+                        decoration: BoxDecoration(
+                            color: notas[12] ? Colors.green : null,
+                            borderRadius: BorderRadius.horizontal(
+                                right: Radius.circular(8)),
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("C#");
+                      },
+                      child: Container(
+                        width: largura_pretas,
+                        height: altura_pretas,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 110,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("F#");
+                      },
+                      child: Container(
+                        width: largura_pretas,
+                        height: altura_pretas,
+                        decoration: BoxDecoration(
+                            color: notas[6] ? Colors.green : Colors.black,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 140,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("G#");
+                      },
+                      child: Container(
+                        width: largura_pretas,
+                        height: altura_pretas,
+                        decoration: BoxDecoration(
+                            color: notas[8] ? Colors.green : Colors.black,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 170,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("A#");
+                      },
+                      child: Container(
+                        width: largura_pretas,
+                        height: altura_pretas,
+                        decoration: BoxDecoration(
+                            color: notas[10] ? Colors.green : Colors.black,
+                            border: Border.all(color: Colors.black)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Center(
               child: Container(
                 child: Column(
@@ -387,6 +652,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            ElevatedButton(onPressed: () => Major(2), child: Text("C Major")),
+            ElevatedButton(onPressed: () => Menor(2), child: Text("C Menor")),
+            ElevatedButton(onPressed: () => Aug(2), child: Text("C Aumentada")),
           ],
         ),
       ),
