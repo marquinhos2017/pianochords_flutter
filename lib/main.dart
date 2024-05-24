@@ -32,6 +32,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<bool> notas = List.filled(13, false); // Assumindo 7 teclas de notas
 
+  bool buttonC = false;
+  bool buttonD = false;
+  bool buttonE = false;
+
+  bool ButtonMajor = false;
+  bool ButtonMenor = false;
+  bool ButtonAug = false;
+
+  int inicial = 0;
+  int tipo = 0;
+
   int _counter = 0;
   bool c_bool = false;
   bool e_bool = false;
@@ -99,563 +110,965 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(widget.title),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: altura_brancas,
-              width: 240,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("C");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[0] ? Colors.green : null,
-                            borderRadius: BorderRadius.horizontal(
-                                left: Radius.circular(8)),
-                            border: Border.all(
-                              color: Colors.black,
-                            )),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 30,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("D");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[2] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 60,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("E");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[4] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 50,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("D#");
-                      },
-                      child: Container(
-                        width: largura_pretas,
-                        height: altura_pretas,
-                        decoration: BoxDecoration(
-                            color: notas[3] ? Colors.green : Colors.black,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 90,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("F");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[5] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 120,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("G");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[7] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 150,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("A");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[9] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 180,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("B");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[11] ? Colors.green : null,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 210,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("C - oitavado");
-                      },
-                      child: Container(
-                        width: largura_brancas,
-                        height: altura_brancas,
-                        decoration: BoxDecoration(
-                            color: notas[12] ? Colors.green : null,
-                            borderRadius: BorderRadius.horizontal(
-                                right: Radius.circular(8)),
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 20,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("C#");
-                      },
-                      child: Container(
-                        width: largura_pretas,
-                        height: altura_pretas,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 110,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("F#");
-                      },
-                      child: Container(
-                        width: largura_pretas,
-                        height: altura_pretas,
-                        decoration: BoxDecoration(
-                            color: notas[6] ? Colors.green : Colors.black,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 140,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("G#");
-                      },
-                      child: Container(
-                        width: largura_pretas,
-                        height: altura_pretas,
-                        decoration: BoxDecoration(
-                            color: notas[8] ? Colors.green : Colors.black,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 170,
-                    top: 0,
-                    child: GestureDetector(
-                      onTap: () {
-                        print("A#");
-                      },
-                      child: Container(
-                        width: largura_pretas,
-                        height: altura_pretas,
-                        decoration: BoxDecoration(
-                            color: notas[10] ? Colors.green : Colors.black,
-                            border: Border.all(color: Colors.black)),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Container(
-                child: Column(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              /*      SizedBox(
+                height: altura_brancas,
+                width: 240,
+                child: Stack(
                   children: [
-                    Text(
-                      note,
-                      style: TextStyle(
-                          fontSize: 140,
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold),
+                    Positioned(
+                      left: 0,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("C");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[0] ? Colors.green : Colors.white,
+                              borderRadius: BorderRadius.horizontal(
+                                  left: Radius.circular(8)),
+                              border: Border.all(
+                                color: Colors.black,
+                              )),
+                        ),
+                      ),
                     ),
-                    SizedBox(
-                      height: altura_brancas,
-                      width: 240,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("C");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: c_bool ? Colors.green : null,
-                                    borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(8)),
-                                    border: Border.all(
-                                      color: Colors.black,
-                                    )),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 30,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("D");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: d_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 60,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("E");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: e_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 50,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("D#");
-                              },
-                              child: Container(
-                                width: largura_pretas,
-                                height: altura_pretas,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 90,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("F");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: f_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 120,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("G");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: g_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 150,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("A");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: a_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 180,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("B");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    color: b_bool ? Colors.green : null,
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 210,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("C - oitavado");
-                              },
-                              child: Container(
-                                width: largura_brancas,
-                                height: altura_brancas,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.horizontal(
-                                        right: Radius.circular(8)),
-                                    border: Border.all(color: Colors.black)),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 20,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("C#");
-                              },
-                              child: Container(
-                                width: largura_pretas,
-                                height: altura_pretas,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 110,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("F#");
-                              },
-                              child: Container(
-                                width: largura_pretas,
-                                height: altura_pretas,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 140,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("G#");
-                              },
-                              child: Container(
-                                width: largura_pretas,
-                                height: altura_pretas,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 170,
-                            top: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("A#");
-                              },
-                              child: Container(
-                                width: largura_pretas,
-                                height: altura_pretas,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                    Positioned(
+                      left: 30,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("D");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[2] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 60,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("E");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[4] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 50,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("D#");
+                        },
+                        child: Container(
+                          width: largura_pretas,
+                          height: altura_pretas,
+                          decoration: BoxDecoration(
+                              color: notas[3] ? Colors.green : Colors.black,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 90,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("F");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[5] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 120,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("G");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[7] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 150,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("A");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[9] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 180,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("B");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[11] ? Colors.green : null,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 210,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("C - oitavado");
+                        },
+                        child: Container(
+                          width: largura_brancas,
+                          height: altura_brancas,
+                          decoration: BoxDecoration(
+                              color: notas[12] ? Colors.green : null,
+                              borderRadius: BorderRadius.horizontal(
+                                  right: Radius.circular(8)),
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 20,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("C#");
+                        },
+                        child: Container(
+                          width: largura_pretas,
+                          height: altura_pretas,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 110,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("F#");
+                        },
+                        child: Container(
+                          width: largura_pretas,
+                          height: altura_pretas,
+                          decoration: BoxDecoration(
+                              color: notas[6] ? Colors.green : Colors.black,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 140,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("G#");
+                        },
+                        child: Container(
+                          width: largura_pretas,
+                          height: altura_pretas,
+                          decoration: BoxDecoration(
+                              color: notas[8] ? Colors.green : Colors.black,
+                              border: Border.all(color: Colors.black)),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 170,
+                      top: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          print("A#");
+                        },
+                        child: Container(
+                          width: largura_pretas,
+                          height: altura_pretas,
+                          decoration: BoxDecoration(
+                              color: notas[10] ? Colors.green : Colors.black,
+                              border: Border.all(color: Colors.black)),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
+              Center(
+                child: Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        note,
+                        style: TextStyle(
+                            fontSize: 140,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: altura_brancas,
+                        width: 240,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("C");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: c_bool ? Colors.green : null,
+                                      borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(8)),
+                                      border: Border.all(
+                                        color: Colors.black,
+                                      )),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 30,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("D");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: d_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 60,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("E");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: e_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 50,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("D#");
+                                },
+                                child: Container(
+                                  width: largura_pretas,
+                                  height: altura_pretas,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 90,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("F");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: f_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 120,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("G");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: g_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 150,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("A");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: a_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 180,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("B");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      color: b_bool ? Colors.green : null,
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 210,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("C - oitavado");
+                                },
+                                child: Container(
+                                  width: largura_brancas,
+                                  height: altura_brancas,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.horizontal(
+                                          right: Radius.circular(8)),
+                                      border: Border.all(color: Colors.black)),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 20,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("C#");
+                                },
+                                child: Container(
+                                  width: largura_pretas,
+                                  height: altura_pretas,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 110,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("F#");
+                                },
+                                child: Container(
+                                  width: largura_pretas,
+                                  height: altura_pretas,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 140,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("G#");
+                                },
+                                child: Container(
+                                  width: largura_pretas,
+                                  height: altura_pretas,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              left: 170,
+                              top: 0,
+                              child: GestureDetector(
+                                onTap: () {
+                                  print("A#");
+                                },
+                                child: Container(
+                                  width: largura_pretas,
+                                  height: altura_pretas,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            c_bool = false;
+                            e_bool = false;
+                            g_bool = false;
+                            d_bool = false;
+                            b_bool = false;
+                            f_bool = false;
+                            a_bool = false;
+
+                            c_bool = true;
+
+                            e_bool = true;
+                            g_bool = true;
+
+                            note = "C";
+                          });
+                        },
+                        child: Text("C")),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            f_bool = false;
+                            a_bool = false;
+                            c_bool = false;
+                            e_bool = false;
+                            g_bool = false;
+                            d_bool = false;
+                            b_bool = false;
+
+                            b_bool = true;
+                            d_bool = true;
+                            g_bool = true;
+                            note = "G";
+                          });
+                        },
+                        child: Text("G")),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            f_bool = false;
+                            a_bool = false;
+                            c_bool = false;
+                            e_bool = false;
+                            g_bool = false;
+                            d_bool = false;
+                            b_bool = false;
+
+                            a_bool = true;
+                            f_bool = true;
+                            d_bool = true;
+                            note = "Dm";
+                          });
+                        },
+                        child: Text("Dm")),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            f_bool = false;
+                            a_bool = false;
+                            c_bool = true;
+                            e_bool = true;
+                            g_bool = false;
+                            d_bool = false;
+                            b_bool = false;
+
+                            a_bool = true;
+                            f_bool = false;
+                            d_bool = false;
+                            note = "Am";
+                          });
+                        },
+                        child: Text("Am")),
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            f_bool = true;
+                            a_bool = true;
+                            c_bool = true;
+                            e_bool = false;
+                            g_bool = false;
+                            d_bool = false;
+                            b_bool = false;
+
+                            a_bool = true;
+                            f_bool = true;
+                            d_bool = false;
+                            note = "F";
+                          });
+                        },
+                        child: Text("F")),
+                  ],
+                ),
+              ),
+          */
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              buttonC ? Color(0xffF38921) : Colors.white10)),
                       onPressed: () {
+                        ;
                         setState(() {
-                          c_bool = false;
-                          e_bool = false;
-                          g_bool = false;
-                          d_bool = false;
-                          b_bool = false;
-                          f_bool = false;
-                          a_bool = false;
-
-                          c_bool = true;
-
-                          e_bool = true;
-                          g_bool = true;
-
-                          note = "C";
+                          buttonC = !buttonC;
+                          buttonD = false;
+                          buttonE = false;
+                          inicial = 0;
+                          if (tipo == 0) {
+                            Major(inicial);
+                          } else if (tipo == 1) {
+                            Menor(inicial);
+                          } else if (tipo == 2) {
+                            Aug(inicial);
+                          }
                         });
                       },
-                      child: Text("C")),
+                      child: Text(
+                        "C",
+                        style: TextStyle(fontSize: 12),
+                      )),
                   ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              buttonD ? Color(0xffF38921) : Colors.white10)),
                       onPressed: () {
                         setState(() {
-                          f_bool = false;
-                          a_bool = false;
-                          c_bool = false;
-                          e_bool = false;
-                          g_bool = false;
-                          d_bool = false;
-                          b_bool = false;
-
-                          b_bool = true;
-                          d_bool = true;
-                          g_bool = true;
-                          note = "G";
+                          buttonD = !buttonD;
+                          buttonC = false;
+                          buttonE = false;
+                          inicial = 2;
+                          if (tipo == 0) {
+                            Major(inicial);
+                          } else if (tipo == 1) {
+                            Menor(inicial);
+                          } else if (tipo == 2) {
+                            Aug(inicial);
+                          }
                         });
                       },
-                      child: Text("G")),
+                      child: Text("D")),
                   ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              buttonE ? Color(0xffF38921) : Colors.white10)),
                       onPressed: () {
                         setState(() {
-                          f_bool = false;
-                          a_bool = false;
-                          c_bool = false;
-                          e_bool = false;
-                          g_bool = false;
-                          d_bool = false;
-                          b_bool = false;
-
-                          a_bool = true;
-                          f_bool = true;
-                          d_bool = true;
-                          note = "Dm";
+                          buttonE = !buttonE;
+                          buttonD = false;
+                          buttonC = false;
+                          inicial = 4;
+                          if (tipo == 0) {
+                            Major(inicial);
+                          } else if (tipo == 1) {
+                            Menor(inicial);
+                          } else if (tipo == 2) {
+                            Aug(inicial);
+                          }
                         });
                       },
-                      child: Text("Dm")),
+                      child: Text("E")),
                   ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              buttonC ? Color(0xffF38921) : Colors.white10)),
                       onPressed: () {
+                        ;
                         setState(() {
-                          f_bool = false;
-                          a_bool = false;
-                          c_bool = true;
-                          e_bool = true;
-                          g_bool = false;
-                          d_bool = false;
-                          b_bool = false;
-
-                          a_bool = true;
-                          f_bool = false;
-                          d_bool = false;
-                          note = "Am";
+                          buttonC = !buttonC;
+                          buttonD = false;
+                          buttonE = false;
+                          inicial = 0;
+                          if (tipo == 0) {
+                            Major(inicial);
+                          } else if (tipo == 1) {
+                            Menor(inicial);
+                          } else if (tipo == 2) {
+                            Aug(inicial);
+                          }
                         });
                       },
-                      child: Text("Am")),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          f_bool = true;
-                          a_bool = true;
-                          c_bool = true;
-                          e_bool = false;
-                          g_bool = false;
-                          d_bool = false;
-                          b_bool = false;
-
-                          a_bool = true;
-                          f_bool = true;
-                          d_bool = false;
-                          note = "F";
-                        });
-                      },
-                      child: Text("F")),
+                      child: Text(
+                        "F",
+                        style: TextStyle(fontSize: 12),
+                      )),
                 ],
               ),
-            ),
-            ElevatedButton(onPressed: () => Major(2), child: Text("C Major")),
-            ElevatedButton(onPressed: () => Menor(2), child: Text("C Menor")),
-            ElevatedButton(onPressed: () => Aug(2), child: Text("C Aumentada")),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(ButtonMajor
+                              ? Color(0xffF38921)
+                              : Colors.white10)),
+                      onPressed: () {
+                        setState(() {
+                          ButtonMajor = true;
+                          ButtonAug = false;
+                          ButtonMenor = false;
+
+                          tipo = 0;
+                        });
+                        Major(inicial);
+                      },
+                      child: Text(
+                        "Maior",
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      )),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(ButtonMenor
+                              ? Color(0xffF38921)
+                              : Colors.white10)),
+                      onPressed: () {
+                        setState(() {
+                          tipo = 1;
+                          ButtonMenor = true;
+                          ButtonAug = false;
+
+                          ButtonMajor = false;
+                        });
+                        Menor(inicial);
+                      },
+                      child: Text("Menor")),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              ButtonAug ? Color(0xffF38921) : Colors.white10)),
+                      onPressed: () {
+                        setState(() {
+                          ButtonAug = true;
+                          ButtonMenor = false;
+                          ButtonMajor = false;
+                          tipo = 2;
+                        });
+                        Aug(inicial);
+                      },
+                      child: Text("Aumentada")),
+                ],
+              ),
+              Column(
+                children: [
+                  SizedBox(
+                    height: altura_brancas,
+                    width: 240,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("C");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[0]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.horizontal(
+                                      left: Radius.circular(8)),
+                                  border: Border.all(
+                                    color: Color(0xffF38921),
+                                  )),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 30,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("D");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[2]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 60,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("E");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[4]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 50,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("D#");
+                            },
+                            child: Container(
+                              width: largura_pretas,
+                              height: altura_pretas,
+                              decoration: BoxDecoration(
+                                  color: notas[3]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 90,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("F");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[5]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 120,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("G");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[7]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 150,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("A");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[9]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 180,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("B");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[11]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 210,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("C - oitavado");
+                            },
+                            child: Container(
+                              width: largura_brancas,
+                              height: altura_brancas,
+                              decoration: BoxDecoration(
+                                  color: notas[12]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.horizontal(
+                                      right: Radius.circular(8)),
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 20,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("C#");
+                            },
+                            child: Container(
+                              width: largura_pretas,
+                              height: altura_pretas,
+                              decoration: BoxDecoration(
+                                  color: notas[1]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 110,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("F#");
+                            },
+                            child: Container(
+                              width: largura_pretas,
+                              height: altura_pretas,
+                              decoration: BoxDecoration(
+                                  color: notas[6]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 140,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("G#");
+                            },
+                            child: Container(
+                              width: largura_pretas,
+                              height: altura_pretas,
+                              decoration: BoxDecoration(
+                                  color: notas[8]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 170,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              print("A#");
+                            },
+                            child: Container(
+                              width: largura_pretas,
+                              height: altura_pretas,
+                              decoration: BoxDecoration(
+                                  color: notas[10]
+                                      ? Color(0xffF38921)
+                                      : Colors.white,
+                                  border: Border.all(color: Color(0xffF38921))),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
