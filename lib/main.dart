@@ -674,7 +674,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              buttonC ? Color(0xffF38921) : Colors.white10)),
+                              buttonC ? Colors.green : Colors.red)),
                       onPressed: () {
                         ;
                         setState(() {
@@ -698,7 +698,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              buttonD ? Color(0xffF38921) : Colors.white10)),
+                              buttonD ? Colors.green : Colors.red)),
                       onPressed: () {
                         setState(() {
                           buttonD = !buttonD;
@@ -718,7 +718,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              buttonE ? Color(0xffF38921) : Colors.white10)),
+                              buttonE ? Colors.green : Colors.red)),
                       onPressed: () {
                         setState(() {
                           buttonE = !buttonE;
@@ -738,7 +738,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              buttonC ? Color(0xffF38921) : Colors.white10)),
+                              buttonC ? Colors.green : Colors.red)),
                       onPressed: () {
                         ;
                         setState(() {
@@ -766,9 +766,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(ButtonMajor
-                              ? Color(0xffF38921)
-                              : Colors.white10)),
+                          backgroundColor: MaterialStatePropertyAll(
+                              ButtonMajor ? Colors.green : Colors.red)),
                       onPressed: () {
                         setState(() {
                           ButtonMajor = true;
@@ -781,13 +780,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: Text(
                         "Maior",
-                        style: TextStyle(fontSize: 12, color: Colors.white),
+                        style: TextStyle(fontSize: 12, color: Colors.black),
                       )),
                   ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(ButtonMenor
-                              ? Color(0xffF38921)
-                              : Colors.white10)),
+                          backgroundColor: MaterialStatePropertyAll(
+                              ButtonMenor ? Colors.green : Colors.red)),
                       onPressed: () {
                         setState(() {
                           tipo = 1;
@@ -802,7 +800,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
-                              ButtonAug ? Color(0xffF38921) : Colors.white10)),
+                              ButtonAug ? Colors.green : Colors.red)),
                       onPressed: () {
                         setState(() {
                           ButtonAug = true;
@@ -833,13 +831,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[0]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
+                                  color: notas[0] ? Colors.green : Colors.white,
                                   borderRadius: BorderRadius.horizontal(
                                       left: Radius.circular(8)),
                                   border: Border.all(
-                                    color: Color(0xffF38921),
+                                    color: Colors.green,
                                   )),
                             ),
                           ),
@@ -855,10 +851,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[2]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[2] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -873,10 +867,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[4]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[4] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -891,10 +883,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[3]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[3] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -909,10 +899,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[5]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[5] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -927,10 +915,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[7]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[7] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -945,10 +931,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[9]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[9] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -963,10 +947,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[11]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color:
+                                      notas[11] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -981,12 +964,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_brancas,
                               height: altura_brancas,
                               decoration: BoxDecoration(
-                                  color: notas[12]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
+                                  color:
+                                      notas[12] ? Colors.green : Colors.white,
                                   borderRadius: BorderRadius.horizontal(
                                       right: Radius.circular(8)),
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -1001,10 +983,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[1]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[1] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -1019,10 +999,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[6]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[6] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -1037,10 +1015,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[8]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color: notas[8] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
@@ -1055,10 +1031,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[10]
-                                      ? Color(0xffF38921)
-                                      : Colors.white,
-                                  border: Border.all(color: Color(0xffF38921))),
+                                  color:
+                                      notas[10] ? Colors.green : Colors.white,
+                                  border: Border.all(color: Colors.black)),
                             ),
                           ),
                         ),
