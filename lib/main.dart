@@ -735,30 +735,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       child: Text("E")),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              buttonC ? Colors.green : Colors.red)),
-                      onPressed: () {
-                        ;
-                        setState(() {
-                          buttonC = !buttonC;
-                          buttonD = false;
-                          buttonE = false;
-                          inicial = 0;
-                          if (tipo == 0) {
-                            Major(inicial);
-                          } else if (tipo == 1) {
-                            Menor(inicial);
-                          } else if (tipo == 2) {
-                            Aug(inicial);
-                          }
-                        });
-                      },
-                      child: Text(
-                        "F",
-                        style: TextStyle(fontSize: 12),
-                      )),
                 ],
               ),
               Row(
@@ -883,7 +859,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[3] ? Colors.green : Colors.white,
+                                  color: notas[3] ? Colors.green : Colors.black,
                                   border: Border.all(color: Colors.black)),
                             ),
                           ),
@@ -983,7 +959,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[1] ? Colors.green : Colors.white,
+                                  color: notas[1] ? Colors.green : Colors.black,
                                   border: Border.all(color: Colors.black)),
                             ),
                           ),
@@ -999,7 +975,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[6] ? Colors.green : Colors.white,
+                                  color: notas[6] ? Colors.green : Colors.black,
                                   border: Border.all(color: Colors.black)),
                             ),
                           ),
@@ -1015,7 +991,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: largura_pretas,
                               height: altura_pretas,
                               decoration: BoxDecoration(
-                                  color: notas[8] ? Colors.green : Colors.white,
+                                  color: notas[8] ? Colors.green : Colors.black,
                                   border: Border.all(color: Colors.black)),
                             ),
                           ),
@@ -1032,7 +1008,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: altura_pretas,
                               decoration: BoxDecoration(
                                   color:
-                                      notas[10] ? Colors.green : Colors.white,
+                                      notas[10] ? Colors.green : Colors.black,
                                   border: Border.all(color: Colors.black)),
                             ),
                           ),
